@@ -11,10 +11,12 @@ export default class Spell {
 
     get Template() {
         return `
+            <ul>
             <li>${this.name}</li>
             <li>${this.desc}</li>
             <li>${this.duration}</li>
-            <li>${this.level}</li>
+            <li>${this.level}</li></ul>
+            
         `
     }
 

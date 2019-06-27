@@ -14,21 +14,26 @@ function drawSpells() {
 }
 
 function drawSelectedSpell() {
-    let selectedElem = document.querySelector('#active-spell');
-    let selectedSpell = _ss.SelectedSpell
-    let template = '';
-
+    // let selectedElem = document.querySelector('#active-spell');
+    // let selectedSpell = _ss.SelectedSpell
+    // selectedElem.innerHTML = selectedSpell.Template;
+    document.querySelector('#active-spell').innerHTML = _ss.SelectedSpell.Template
 }
 
 export default class SpellController {
     constructor() {
         _ss.addSubscriber('spells', drawSpells)
+        _ss.addSubscriber('selectedSpell', drawSelectedSpell)
         _ss.getSpells()
+
     }
 
     getSpell(url) {
         _ss.getSpell(url)
     }
 
+    addSpell() {
+        stuff
+    }
 
 }
