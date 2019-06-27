@@ -9,4 +9,13 @@ export default class Spell {
         this.url = data.url
     }
 
+    get Template() {
+        return `
+            <li>${}</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        `
+    }
+
 }
