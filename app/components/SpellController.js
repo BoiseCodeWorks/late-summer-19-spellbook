@@ -24,7 +24,7 @@ function drawMySpells() {
     let mySpells = _ss.MySpells
     let template = ''
     mySpells.forEach(s => {
-        template += s.Template
+        template += s.MyTemplate
     })
     mySpellsElem.innerHTML = template
 
@@ -38,8 +38,9 @@ export default class SpellController {
     constructor() {
         _ss.addSubscriber('spells', drawSpells)
         _ss.addSubscriber('selectedSpell', drawSelectedSpell)
-        _ss.getSpells()
         _ss.addSubscriber('mySpells', drawMySpells)
+        _ss.getSpells()
+        _ss.getMySpells()
     }
 
     getSpell(url) {
@@ -48,6 +49,10 @@ export default class SpellController {
 
     addSpell() {
         _ss.addSpell()
+    }
+
+    forgetSpell(spellId) {
+        _ss.forgetSpell(spellId)
     }
 
 }

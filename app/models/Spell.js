@@ -20,5 +20,17 @@ export default class Spell {
             
         `
     }
+    get MyTemplate() {
+        return `
+            <ul>
+            <li>${this.name}</li>
+            <li>${this.description}</li>
+            <li>${this.duration}</li>
+            <li>${this.level}</li></ul>
+            <button class="btn btn-sm btn-secondary" onclick="app.controllers.spellController.forgetSpell('${this._id}')">Forget
+                    Spell</button>
+            
+        `
+    }
 
 }

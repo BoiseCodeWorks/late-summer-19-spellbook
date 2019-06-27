@@ -32,10 +32,20 @@ function setState(prop, data) {
 }
 
 export default class SpellService {
+    forgetSpell(spellId) {
+        _bcwApi.delete(spellId)
+            .then(res => {
+                console.log(res.data.message)
+                this.getMySpells()
+            })
+            .catch(err => console.error(err))
+    }
+
     addSpell() {
         _bcwApi.post('', this.SelectedSpell)
             .then(res => {
                 console.log(res.data)
+                this.getMySpells()
             })
             .catch(err => console.error(err))
     }
