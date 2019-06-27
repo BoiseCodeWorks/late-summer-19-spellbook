@@ -11,7 +11,7 @@ export default class Spell {
 
     get Template() {
         return `
-            <li>${}</li>
+            <li></li>
             <li></li>
             <li></li>
             <li></li>

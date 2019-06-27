@@ -8,7 +8,7 @@ function drawSpells() {
     let template = '';
     mySpells.forEach(spell => template += `<li>
     <button type="button" class="btn btn-primary btn-sm"
-        onclick="app.controllers.spellController.getSpell(${spell.url})">${spell.name}</button>
+        onclick="app.controllers.spellController.getSpell('${spell.url}')">${spell.name}</button>
 </li>`)
     spellElem.innerHTML = template
 }
@@ -17,5 +17,9 @@ export default class SpellController {
     constructor() {
         _ss.addSubscriber('spells', drawSpells)
         _ss.getSpells()
+    }
+
+    getSpell(url) {
+        _ss.getSpell(url)
     }
 }
