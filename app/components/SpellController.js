@@ -13,6 +13,10 @@ function drawSpells() {
     spellElem.innerHTML = template
 }
 
+function drawSelectedSpell() {
+
+}
+
 export default class SpellController {
     constructor() {
         _ss.addSubscriber('spells', drawSpells)
@@ -22,4 +26,6 @@ export default class SpellController {
     getSpell(url) {
         _ss.getSpell(url)
     }
+
+
 }

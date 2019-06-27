@@ -9,11 +9,13 @@ let _spellApi = axios.create({
 })
 
 let _state = {
-    spells: []
+    spells: [],
+    selectedSpell: {}
 }
 
 let _subscribers = {
-    spells: []
+    spells: [],
+    selectedSpell: []
 }
 
 function setState(prop, data) {
@@ -26,6 +28,7 @@ export default class SpellService {
         _spellApi.get(formatUrl(url))
             .then(res => {
                 console.log(res.data)
+                setState('selectedSpell', res.data)
             })
             .catch(err => console.error(err))
     }
