@@ -33,7 +33,7 @@ export default class SpellController {
     }
 
     addSpell() {
-        stuff
+        _ss.addSpell()
     }
 
 }

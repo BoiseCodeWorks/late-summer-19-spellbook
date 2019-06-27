@@ -4,17 +4,25 @@ function formatUrl(url) {
     return '//bcw-getter.herokuapp.com/?url=' + encodeURIComponent(url)
 }
 
+// @ts-ignore
 let _spellApi = axios.create({
     baseURL: ''
 })
 
+// @ts-ignore
+let _bcwApi = axios.create({
+    baseURL: 'https://bcw-sandbox.herokuapp.com/api/spells/Darryl'
+})
+
 let _state = {
     spells: [],
+    mySpells: [],
     selectedSpell: {}
 }
 
 let _subscribers = {
     spells: [],
+    mySpells: [],
     selectedSpell: []
 }
 
@@ -24,6 +32,13 @@ function setState(prop, data) {
 }
 
 export default class SpellService {
+    addSpell() {
+        _bcwApi.post('', this.SelectedSpell)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => console.error(err))
+    }
     getSpell(url) {
         _spellApi.get(formatUrl(url))
             .then(res => {
