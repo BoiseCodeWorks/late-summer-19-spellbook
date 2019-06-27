@@ -11,7 +11,7 @@ let _spellApi = axios.create({
 
 // @ts-ignore
 let _bcwApi = axios.create({
-    baseURL: 'https://bcw-sandbox.herokuapp.com/api/spells/Darryl'
+    baseURL: 'https://bcw-sandbox.herokuapp.com/api/Darryl/spells/'
 })
 
 let _state = {
@@ -60,6 +60,10 @@ export default class SpellService {
     get SelectedSpell() {
         return new Spell(_state.selectedSpell)
     }
+    get MySpells() {
+        return _state.mySpells.map(s => new Spell(s))
+    }
+
 
     getSpells() {
         _spellApi.get(formatUrl('http://dnd5eapi.co/api/spells/'))

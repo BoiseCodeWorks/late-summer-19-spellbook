@@ -19,6 +19,16 @@ function drawSelectedSpell() {
     // selectedElem.innerHTML = selectedSpell.Template;
     document.querySelector('#active-spell').innerHTML = _ss.SelectedSpell.Template
 }
+function drawMySpells() {
+    let mySpellsElem = document.querySelector('#my-spellbook')
+    let mySpells = _ss.MySpells
+    let template = ''
+
+
+
+}
+
+
 
 export default class SpellController {
     constructor() {
