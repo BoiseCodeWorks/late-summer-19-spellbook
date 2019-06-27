@@ -23,7 +23,11 @@ function setState(prop, data) {
 
 export default class SpellService {
     getSpell(url) {
-        throw new Error("Method not implemented.");
+        _spellApi.get(formatUrl(url))
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => console.error(err))
     }
 
     addSubscriber(prop, fn) {
