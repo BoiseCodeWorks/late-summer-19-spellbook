@@ -14,6 +14,9 @@ function drawSpells() {
 }
 
 function drawSelectedSpell() {
+    let selectedElem = document.querySelector('#active-spell');
+    let selectedSpell = _ss.SelectedSpell
+    let template = '';
 
 }
 

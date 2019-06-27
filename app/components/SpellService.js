@@ -31,6 +31,7 @@ export default class SpellService {
                 setState('selectedSpell', res.data)
             })
             .catch(err => console.error(err))
+
     }
 
     addSubscriber(prop, fn) {
@@ -39,6 +40,10 @@ export default class SpellService {
 
     get Spells() {
         return _state.spells.map(s => new Spell(s))
+    }
+
+    get SelectedSpell() {
+        return new Spell(_state.selectedSpell)
     }
 
     getSpells() {
