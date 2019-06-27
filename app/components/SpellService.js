@@ -63,6 +63,14 @@ export default class SpellService {
     get MySpells() {
         return _state.mySpells.map(s => new Spell(s))
     }
+    getMySpells() {
+        _bcwApi.get('')
+            .then(res => {
+                console.log(res.data.data)
+                setState('mySpells', res.data.data)
+            })
+            .catch(err => console.error(err))
+    }
 
 
     getSpells() {

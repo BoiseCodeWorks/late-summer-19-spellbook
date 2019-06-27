@@ -23,6 +23,10 @@ function drawMySpells() {
     let mySpellsElem = document.querySelector('#my-spellbook')
     let mySpells = _ss.MySpells
     let template = ''
+    mySpells.forEach(s => {
+        template += s.Template
+    })
+    mySpellsElem.innerHTML = template
 
 
 
@@ -35,7 +39,7 @@ export default class SpellController {
         _ss.addSubscriber('spells', drawSpells)
         _ss.addSubscriber('selectedSpell', drawSelectedSpell)
         _ss.getSpells()
-
+        _ss.addSubscriber('mySpells', drawMySpells)
     }
 
     getSpell(url) {
